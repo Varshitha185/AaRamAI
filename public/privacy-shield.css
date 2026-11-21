@@ -1,0 +1,96 @@
+
+/* Privacy Shield proof panel */
+.privacy-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+    margin: 13px 0 17px;
+}
+
+.privacy-stats > div {
+    background: var(--panel2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 11px;
+}
+
+.privacy-stats small {
+    display: block;
+    color: var(--muted);
+    font: 8px 'DM Mono';
+    letter-spacing: .5px;
+}
+
+.privacy-stats b {
+    display: block;
+    font-size: 22px;
+    margin-top: 7px;
+}
+
+.privacy-subhead {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    margin: 4px 0 7px;
+    font-size: 10px;
+}
+
+.privacy-subhead span {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.privacy-proof-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.proof-status {
+    font: 8px 'DM Mono';
+    color: var(--green);
+    border: 1px solid #276c5c;
+    border-radius: 4px;
+    padding: 4px 6px;
+}
+
+.proof-facts {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin: 8px 0;
+}
+
+.proof-facts span {
+    font-size: 8px;
+    color: #9ddbc8;
+    background: #102b29;
+    border-radius: 4px;
+    padding: 5px 6px;
+}
+
+.egress-item details {
+    margin-top: 6px;
+}
+
+.egress-item summary {
+    font-size: 9px;
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.egress-item pre {
+    margin-top: 7px;
+}
+
+@media (max-width: 520px) {
+    .privacy-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .privacy-stats > div:last-child {
+        grid-column: 1 / -1;
+    }
+}

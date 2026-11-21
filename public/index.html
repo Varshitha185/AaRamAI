@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AaRamAI | Intelligent Observability</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/privacy-shield.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="brandmark">A</div><div><b>AaRamAI</b><small>INTELLIGENT OBSERVABILITY</small></div></div>
+    <nav>
+      <a class="active" href="#overview">◫ &nbsp; Overview</a>
+      <a href="#incidents">◎ &nbsp; Incident DNA</a>
+      <a href="#privacy">⬡ &nbsp; Privacy Shield</a>
+      <a href="#recovery">↗ &nbsp; Recovery Lab</a>
+      <a href="#audit">≡ &nbsp; Audit history</a>
+    </nav>
+    <div class="sidefoot"><span class="pulse"></span> DEMO ENVIRONMENT<br><small>Local collector architecture</small></div>
+  </aside>
+  <main>
+    <header><div><div class="eyebrow">CICADA 2026 · AIOPS PLATFORM</div><h1>Infrastructure overview</h1><p class="muted">Observe clearly. Protect locally. Recover safely.</p></div><div class="header-right"><span class="live-dot"></span> LIVE DEMO <span id="clock"></span></div></header>
+
+    <section class="kpis">
+      <article class="kpi"><span>OVERALL HEALTH</span><strong id="health">Waiting</strong><small id="healthReason">Awaiting collector telemetry</small></article>
+      <article class="kpi"><span>CPU UTILIZATION</span><strong id="cpu">—</strong><small>Latest collector reading</small></article>
+      <article class="kpi"><span>NETWORK LATENCY</span><strong id="latency">—</strong><small>Milliseconds</small></article>
+      <article class="kpi"><span>ACTIVE INCIDENTS</span><strong id="incidentCount">0</strong><small>Correlated event groups</small></article>
+    </section>
+
+    <section class="grid two">
+      <article class="panel"><div class="panelhead"><div><h2>Infrastructure signals</h2><p>Latest metadata received from local collector</p></div><span class="tag">LIVE TELEMETRY</span></div><canvas id="chart" height="190"></canvas><div class="legend"><span><i class="cyan"></i> CPU</span><span><i class="purple"></i> Memory</span></div></article>
+      <article class="panel"><div class="panelhead"><div><h2>Collector fleet</h2><p>Local agent connectivity</p></div><span id="collectorBadge" class="tag">CHECKING</span></div><div class="collector"><div class="servericon">▤</div><div><b>demo-server-01</b><small id="lastSeen">Waiting for heartbeat</small></div><span id="collectorState" class="state">—</span></div><div class="minirow"><span>Collector version</span><b>0.1.0</b></div><div class="minirow"><span>Tenant</span><b>DEMO_TENANT</b></div><div class="minirow"><span>Transport</span><b>Authenticated API</b></div><div class="minirow"><span>Raw logs exported</span><b class="green">0</b></div></article>
+    </section>
+
+    <section id="incidents" class="panel"><div class="panelhead"><div><h2>Incident DNA</h2><p>Related signals grouped into explainable incidents</p></div><span class="tag">CORRELATION ENGINE</span></div><div id="incidentsList" class="empty">No correlated incidents. Infrastructure looks stable.</div></section>
+
+    <section class="grid two">
+      <article id="privacy" class="panel"><div class="panelhead"><div><h2>Privacy Shield · Egress proof</h2><p>Approved metadata payloads prepared for SaaS</p></div><span class="tag greenTag">LOCAL SCAN</span></div><div class="privacy-note">✓ Raw logs stay on the local collector. Sensitive patterns are detected locally; only fixed-schema metadata is eligible for transmission.</div><div class="privacy-stats"><div><small>RECENT LOGS SCANNED</small><b id="privacyScanned">0</b></div><div><small>SENSITIVE DETECTIONS</small><b id="privacyDetections">0</b></div><div><small>RAW LOGS EXPORTED</small><b id="privacyExported">0</b></div></div><div class="privacy-subhead"><b>Latest egress proofs</b><span>Values hidden · metadata only</span></div><div id="egressList" class="egress empty">Waiting for first payload…</div></article>
+      <article id="recovery" class="panel"><div class="panelhead"><div><h2>Recovery Lab</h2><p>Test a policy-bounded recovery simulation</p></div><span class="tag">SIMULATION ONLY</span></div><div class="recoverybox"><div><small>Current CPU</small><strong id="recoveryCpu">—</strong></div><div class="arrow">→</div><div><small>Projected CPU</small><strong id="projectedCpu">—</strong></div></div><button id="simulateRecovery" class="primary">Simulate safe recovery</button><p id="recoveryResult" class="muted tiny">No real infrastructure changes will be made.</p></article>
+    </section>
+
+    <section class="panel"><div class="panelhead"><div><h2>Live demo controls</h2><p>Inject scenarios to validate the system in front of judges</p></div><span class="tag">TEST HARNESS</span></div><div class="controls"><button data-scenario="cpu_incident">⚡ Inject CPU incident</button><button data-scenario="secret_log">◈ Inject secret log</button><button data-scenario="normal">↺ Return to normal</button><button id="outageButton">⇄ Simulate SaaS outage</button></div><div class="controlhint">Scenarios generate telemetry at the local collector. Allow 2–4 seconds for dashboard updates.</div></section>
+
+    <section id="audit" class="panel"><div class="panelhead"><div><h2>Audit history</h2><p>Collector delivery and operator actions</p></div></div><div id="auditList" class="empty">No audit events yet.</div></section>
+    <footer>AaRamAI · Privacy-first AIOps prototype · Simulated telemetry</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

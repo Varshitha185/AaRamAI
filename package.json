@@ -1,0 +1,17 @@
+{
+  "name": "aaramai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Privacy-first AIOps observability hackathon prototype",
+  "scripts": {
+    "start": "node server.js",
+    "collector": "node collector/collector.js",
+    "dev": "concurrently \"node server.js\" \"node collector/collector.js\""
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
